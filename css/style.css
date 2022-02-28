@@ -1,0 +1,9 @@
+#body-bg{
+  background-color: rgb(247, 235, 235)
+}
+.col{
+background-color: azure; 
+border-radius: 20px; 
+border: 1px solid gold;
+padding: 20px;
+}
