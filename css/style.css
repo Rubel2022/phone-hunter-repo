@@ -6,6 +6,12 @@ background-color: azure;
 border-radius: 20px; 
 border: 1px solid gold;
 margin:0 auto;
-  margin-bottom:10px;
-  padding: 30px;
+margin-bottom:10px;
+padding: 30px;
+
+}
+#error{
+  display:none;
+  color:red;
+  text-align: center;
 }
