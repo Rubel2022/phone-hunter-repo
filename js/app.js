@@ -24,8 +24,8 @@ const displayPhoneItems=(phones)=>{
             document.getElementById("error").style.display="none"
             div.classList.add('col')
             div.innerHTML=`
-            <div class="card h-100 w-75 text-center mx-auto">
-                <img  src="${phone.image}" class="card-img-top p-3 " alt="...">
+            <div class="card h-100 w-75 text-center mx-auto shadow">
+                <img  src="${phone.image}" class="card-img-top p-4" alt="...">
                 <div class="card-body mx-auto">
                   <h4 class="card-title">${phone.phone_name}</h4>
                   <h5 class="card-text">${phone.brand}</h5>
@@ -56,22 +56,65 @@ const deatailsArea=document.getElementById('phone-deatails')
 const div=document.createElement('div')
 div.classList.add('col')
 div.innerHTML=`
-<div class="card h-100 mx-auto ">
-<img   src="${deatails.image}" class="card-img-top" alt="...">
-<div class="card-body text-center p-4">
-  <h4 class="card-title text-primary">${deatails.name}</h4>
-  <h5 class="card-text">${deatails.brand}</h5>
-  <p> ${(deatails.releaseDate !=="") ? deatails.releaseDate:('no-released')}</p>
-  <h6>${deatails.mainFeatures.storage}</h6>
-  <h6>${deatails.mainFeatures.memory}</h6>
-  <h6>${deatails.mainFeatures.displaySize}</h6>
-  <h6>${deatails.mainFeatures.chipSet}</h6>
-  <h6>Sensore:${deatails.mainFeatures.sensors}</h6> 
+<div class="phone-details">
+<img src="${deatails.image}" class="card-img-top p-4 w-50 img-style shadow" alt="...">
+<h4 class="card-title text-primary text-center">${deatails.brand} ${deatails.name}</h4>
+<table class="table table-bordered">
+<tbody>
+<tr>
+  <th scope="row">Release</th>
+  <td>${(deatails.releaseDate !=="") ? deatails.releaseDate:('no-released')}</td>
+</tr>
+<tr>
+  <th scope="row">Storage</th>
+  <td>${deatails.mainFeatures.storage}</td>
+</tr>
+<tr>
+  <th scope="row">Memory</th>
+  <td >${deatails.mainFeatures.memory}</td>
+</tr>
+<tr>
+  <th scope="row">Display-size</th>
+  <td >${deatails.mainFeatures.displaySize}</td>
+</tr>
+<tr>
+  <th scope="row">ChipSet</th>
+  <td >${deatails.mainFeatures.chipSet}</td>
+</tr>
+<tr>
+  <th scope="row">Sensors</th>
+  <td >${deatails.mainFeatures.sensors}</td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
+
 `
 deatailsArea.appendChild(div)
+
+
+
 
 }
 
 
+
+
+
+
+
+
+
+// // {/* <div class="card h-100 mx-auto ">
+// <img   src="${deatails.image}" class="card-img-top p-4 w-50 mx-auto shadow" alt="...">
+// <div class="card-body  p-4">
+//   <h4 class="card-title text-primary text-center">${deatails.name}</h4>
+//   <h5 class="card-text text-center text-danger">${deatails.brand}</h5>
+//   <h6 class="text-center"> ${(deatails.releaseDate !=="") ? deatails.releaseDate:('no-released')}</h6>
+//   <h5>Storage:<small class="text-center">${deatails.mainFeatures.storage}</small></h5>
+//   <h5>Memory:<small>${deatails.mainFeatures.memory}</small></h5>
+//   <h5>Display-Size:<span>${deatails.mainFeatures.displaySize}</span></h5>
+//   <h5>${deatails.mainFeatures.chipSet}</h5>
+//   <h5>Sensore:<small>${deatails.mainFeatures.sensors}</small></h5> 
+// </div>
+// </div> */}

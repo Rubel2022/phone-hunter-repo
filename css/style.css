@@ -15,3 +15,13 @@ padding: 30px;
   color:red;
   text-align: center;
 }
+.phone-details{
+  background-color: whitesmoke;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid darkorange;
+}
+.img-style{
+  margin: 0 auto;
+}
