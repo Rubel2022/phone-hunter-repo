@@ -23,5 +23,10 @@ padding: 30px;
   border: 1px solid darkorange;
 }
 .img-style{
+  text-align: center;
   margin: 0 auto;
+  width: 350px;
+  height: 340px;
+  padding: 20px;
+  
 }

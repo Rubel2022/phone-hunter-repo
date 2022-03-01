@@ -44,6 +44,7 @@ const displayPhoneItems=(phones)=>{
 
 const phoneDeatails=(deatails)=>{
   document.getElementById('phone-deatails').innerHTML=""
+
   const url=` https://openapi.programming-hero.com/api/phone/${deatails}`
   // console.log(url)
   fetch(url)
@@ -51,13 +52,15 @@ const phoneDeatails=(deatails)=>{
   .then(data=>displayPhoneDeatails(data.data))
 }
 const displayPhoneDeatails=(deatails)=>{
+  console.log(deatails)
   console.log(deatails.releaseDate)
 const deatailsArea=document.getElementById('phone-deatails')
+
 const div=document.createElement('div')
 div.classList.add('col')
 div.innerHTML=`
 <div class="phone-details">
-<img src="${deatails.image}" class="card-img-top p-4 w-50 img-style shadow" alt="...">
+<img src="${deatails.image}" class="mb-4 img-style mx-auto shadow" alt="...">
 <h4 class="card-title text-primary text-center">${deatails.brand} ${deatails.name}</h4>
 <table class="table table-bordered">
 <tbody>
@@ -85,36 +88,14 @@ div.innerHTML=`
   <th scope="row">Sensors</th>
   <td >${deatails.mainFeatures.sensors}</td>
 </tr>
+<tr>
+  <th scope="row">Others</th>
+  <td >${deatails.others.Bluetooth},${deatails.others.GPS},${deatails.others.WLAN}</td>
+</tr>
 </tbody>
 </table>
 </div>
 
 `
 deatailsArea.appendChild(div)
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-// // {/* <div class="card h-100 mx-auto ">
-// <img   src="${deatails.image}" class="card-img-top p-4 w-50 mx-auto shadow" alt="...">
-// <div class="card-body  p-4">
-//   <h4 class="card-title text-primary text-center">${deatails.name}</h4>
-//   <h5 class="card-text text-center text-danger">${deatails.brand}</h5>
-//   <h6 class="text-center"> ${(deatails.releaseDate !=="") ? deatails.releaseDate:('no-released')}</h6>
-//   <h5>Storage:<small class="text-center">${deatails.mainFeatures.storage}</small></h5>
-//   <h5>Memory:<small>${deatails.mainFeatures.memory}</small></h5>
-//   <h5>Display-Size:<span>${deatails.mainFeatures.displaySize}</span></h5>
-//   <h5>${deatails.mainFeatures.chipSet}</h5>
-//   <h5>Sensore:<small>${deatails.mainFeatures.sensors}</small></h5> 
-// </div>
-// </div> */}
