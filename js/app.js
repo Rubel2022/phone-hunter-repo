@@ -12,10 +12,7 @@ const displayPhoneItems=(phones)=>{
   // console.log(phones)
   if(phones.length===0){
     document.getElementById("error").style.display="block"
-    
-    
   }
-    
       else{
         const parentPhoneArea=document.getElementById('phone-area')
         for(const phone of phones){
@@ -38,28 +35,21 @@ const displayPhoneItems=(phones)=>{
           }
       }
   }
-  
-   
-  
-
 const phoneDeatails=(deatails)=>{
   document.getElementById('phone-deatails').innerHTML=""
-
   const url=` https://openapi.programming-hero.com/api/phone/${deatails}`
-  // console.log(url)
   fetch(url)
   .then(res=>res.json())
   .then(data=>displayPhoneDeatails(data.data))
+  
 }
 const displayPhoneDeatails=(deatails)=>{
-  console.log(deatails)
-  console.log(deatails.releaseDate)
+  // console.log(deatails.releaseDate)
 const deatailsArea=document.getElementById('phone-deatails')
-
 const div=document.createElement('div')
 div.classList.add('col')
 div.innerHTML=`
-<div class="phone-details">
+<div class="phone-details w-50">
 <img src="${deatails.image}" class="mb-4 img-style mx-auto shadow" alt="...">
 <h4 class="card-title text-primary text-center">${deatails.brand} ${deatails.name}</h4>
 <table class="table table-bordered">
